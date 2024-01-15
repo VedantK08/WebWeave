@@ -3,7 +3,6 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 const {
-  getPost,
   deletePost,
   createPost,
   allPosts,
@@ -23,7 +22,6 @@ const upload = multer({ storage });
 
 router.get("/all", allPosts);
 router.get("/specific/:id", specificPost);
-router.get("/getPost/:id", getPost);
 
 router.post("/createPost", upload.single("image"), createPost);
 

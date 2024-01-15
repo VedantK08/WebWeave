@@ -1,6 +1,7 @@
 const client = require("../database/pgres");
 
 const allPosts = (req, res) => {
+  console.log("Inside all posts, postController ");
   client.query(`SELECT * FROM POSTS`, [], (err, result) => {
     if (err) {
       return res.status(400).json(err);
@@ -16,22 +17,6 @@ const specificPost = (req, res) => {
       return res.status(400).json(err);
     }
     if (result.rows.length === 0) {
-      return res.status(200).json({ message: "You haven't Posted Yet" });
-    }
-    console.log(result.rows);
-    return res.status(200).json(result.rows);
-  });
-};
-
-const getPost = (req, res) => {
-  const { id } = req.params;
-  console.log("Id is", id);
-  client.query(`SELECT * FROM POSTS WHERE user_id=$1`, [id], (err, result) => {
-    if (err) {
-      return res.status(400).json(err);
-    }
-    if (result.rows.length === 0) {
-      console.log("Inside checking row length ");
       return res.status(200).json({ message: "You haven't Posted Yet" });
     }
     console.log(result.rows);
@@ -63,4 +48,4 @@ const createPost = (req, res) => {
   );
 };
 
-module.exports = { getPost, deletePost, createPost, allPosts, specificPost };
+module.exports = { deletePost, createPost, allPosts, specificPost };

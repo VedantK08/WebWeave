@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
-import { postData } from "../Features/userSlice";
+import { postUser } from "../Features/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Link as RLink } from "react-router-dom";
@@ -61,7 +61,7 @@ export default function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(postData(user)).then((data) => setMessage(data.payload.message));
+    dispatch(postUser(user)).then((data) => setMessage(data.payload.message));
     setUser({
       name: "",
       email: "",

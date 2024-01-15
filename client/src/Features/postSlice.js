@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createpost, getallposts, specificuserpost } from "../utils/api";
 
 const host = import.meta.env.VITE_SERVER_URL;
 
 export const getAllPosts = createAsyncThunk("Post/All", async () => {
-  const response = await fetch(`${host}/api/post/all`);
+  const response = await fetch(getallposts);
   const data = await response.json();
   return data;
 });
@@ -11,14 +12,14 @@ export const getAllPosts = createAsyncThunk("Post/All", async () => {
 export const specificUserPost = createAsyncThunk(
   "Post/Specific",
   async (id) => {
-    const response = await fetch(`${host}/api/post/specific/${id}`);
+    const response = await fetch(specificuserpost);
     const data = await response.json();
     return data;
   }
 );
 
 export const createPost = createAsyncThunk("post/createpost", async (data) => {
-  const response = await fetch(`${host}/api/post/createPost`, {
+  const response = await fetch(createpost, {
     method: "POST",
     body: data,
   });

@@ -63,6 +63,7 @@ VALUES($1,$2,$3) RETURNING *`,
 };
 
 const checkUser = (req, res) => {
+  console.log("inside check user, uerController");
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(200).json({ message: "Fill Credentials" });

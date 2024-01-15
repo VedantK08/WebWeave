@@ -17,14 +17,14 @@ import { selectUser } from "../Features/userSlice";
 import { getAllPosts, selectAllPosts } from "../Features/postSlice";
 
 const Post = ({ post }) => {
-  // const dispatch = useDispatch();
-  // const userData = useSelector(selectUser);
-  // const postData = useSelector(selectAllPosts);
+  /* const dispatch = useDispatch();
+  const userData = useSelector(selectUser);
+  const postData = useSelector(selectAllPosts);
 
-  // useEffect(() => {
-  //   dispatch(getAllPosts());
-  // }, []);
-
+  useEffect(() => {
+    dispatch(getAllPosts());
+  }, []);
+ */
   return (
     <Card sx={{ maxWidth: "75%", margin: 5 }}>
       <CardHeader
@@ -40,17 +40,17 @@ const Post = ({ post }) => {
             <MoreVert />
           </IconButton>
         }
-        //title={`${post.imagename}`}
+        title={`${post.imagename}`}
       />
       <CardMedia
         component="img"
         height="20%"
-        //image={`http://localhost:3002/uploads/${post.imagename}`}
+        image={`http://localhost:3002/uploads/${post.imagename}`}
         alt="Post Image"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          {/* {post.caption} */}
+          {post.caption}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

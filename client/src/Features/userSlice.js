@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-const host = import.meta.env.VITE_SERVER_URL;
-console.log(host);
-
-export const postData = createAsyncThunk("Users/create", async (user) => {
-  const response = await fetch(`${host}api/user/create`, {
+import { createUser, checkuser } from "../utils/api";
+/* const host = import.meta.env.VITE_SERVER_URL;
+console.log(host); */
+console.log(createUser);
+export const postUser = createAsyncThunk("Users/create", async (user) => {
+  const response = await fetch(createUser, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -16,7 +16,7 @@ export const postData = createAsyncThunk("Users/create", async (user) => {
 });
 
 export const checkUser = createAsyncThunk("User/check", async (user) => {
-  const response = await fetch(`${host}api/user/checkUser`, {
+  const response = await fetch(checkuser, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -24,7 +24,7 @@ export const checkUser = createAsyncThunk("User/check", async (user) => {
     body: JSON.stringify(user),
   });
   const data = await response.json();
-  console.log("daa after checking user: ", data);
+  console.log("data after checking user: ", data);
   return data;
 });
 
@@ -46,13 +46,13 @@ const userSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(postData.pending, (state, action) => {
+      .addCase(postUser.pending, (state, action) => {
         state.loading = true;
       })
-      .addCase(postData.fulfilled, (state, action) => {
+      .addCase(postUser.fulfilled, (state, action) => {
         state.message = action.payload;
       })
-      .addCase(postData.rejected, (state, action) => {
+      .addCase(postUser.rejected, (state, action) => {
         console.log(action.payload);
         state.loading = false;
       })
