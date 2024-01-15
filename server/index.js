@@ -11,7 +11,9 @@ app.use(cors());
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
 app.use("/uploads/", static("./uploads/"));
-
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Server Started" });
+});
 app.listen(3002, () => {
   console.log("Server Started");
 });
