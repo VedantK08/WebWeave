@@ -16,6 +16,7 @@ import { useState } from "react";
 import { postData } from "../Features/userSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { Link as RLink } from "react-router-dom";
 function Copyright(props) {
   return (
     <Typography
@@ -147,9 +148,9 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/userLogin" variant="body2">
+                <RLink to="/userLogin" variant="body2">
                   Already have an account? Sign in
-                </Link>
+                </RLink>
               </Grid>
             </Grid>
           </Box>

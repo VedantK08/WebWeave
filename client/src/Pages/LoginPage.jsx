@@ -17,6 +17,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { checkUser, selectUser } from "../Features/userSlice";
 
+import { Link as RLink } from "react-router-dom";
+
 function Copyright(props) {
   return (
     <Typography
@@ -146,14 +148,10 @@ export default function LoginPage() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
+                  <RLink to="#">Forgot password?</RLink>
                 </Grid>
                 <Grid item>
-                  <Link href="/signup" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+                  <RLink to="/signup">{"Don't have an account? Sign Up"}</RLink>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
