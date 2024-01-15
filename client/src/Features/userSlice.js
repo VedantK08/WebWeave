@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const postData = createAsyncThunk("Users/create", async (user) => {
-  const response = await fetch("http://localhost:3002/api/user/create", {
+  const response = await fetch(`${host}/api/user/create`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -13,7 +13,7 @@ export const postData = createAsyncThunk("Users/create", async (user) => {
 });
 
 export const checkUser = createAsyncThunk("User/check", async (user) => {
-  const response = await fetch("http://localhost:3002/api/user/checkUser", {
+  const response = await fetch(`${host}/api/user/checkUser`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",

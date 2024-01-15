@@ -14,12 +14,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../Features/userSlice";
-import {
-  getAllPosts,
-  getPost,
-  selectAllPosts,
-  selectPost,
-} from "../Features/postSlice";
+import { getAllPosts, selectAllPosts } from "../Features/postSlice";
 
 const Post = ({ post }) => {
   // const dispatch = useDispatch();
