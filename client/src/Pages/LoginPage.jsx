@@ -147,9 +147,6 @@ export default function LoginPage() {
                 Sign In
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <RLink to="/userHome">Forgot password?</RLink>
-                </Grid>
                 <Grid item>
                   <RLink to="/signup">{"Don't have an account? Sign Up"}</RLink>
                 </Grid>

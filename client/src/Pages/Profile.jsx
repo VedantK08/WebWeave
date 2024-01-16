@@ -47,7 +47,7 @@ const Profile = () => {
         />
         <Box sx={{ marginLeft: 5, mb: 5 }}>
           <Typography variant="h2" align="right">
-            Hritik Roshan
+            Vedant Kulkarni
           </Typography>
         </Box>
         <Typography
@@ -59,9 +59,9 @@ const Profile = () => {
         </Typography>
       </Box>
       <Typography variant="body1" gutterBottom sx={{ marginTop: "1%" }}>
-        About Me: I am an Indian Actor working in Hindi cinemas.
+        About Me: I am Web Developer.
       </Typography>
-      <Typography>My Photos: </Typography>
+      <Typography>My favorite Photos: </Typography>
       <ImageList
         sx={{ width: 550, height: 300, gap: 10 }}
         cols={3}

@@ -1,11 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { createpost, getallposts, specificuserpost } from "../utils/api";
 
-const host = import.meta.env.VITE_SERVER_URL;
-
 export const getAllPosts = createAsyncThunk("Post/All", async () => {
   const response = await fetch(getallposts);
   const data = await response.json();
+  console.log(data);
   return data;
 });
 
